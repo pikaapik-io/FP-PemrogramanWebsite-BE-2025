@@ -25,6 +25,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Dependencies
         run: bun install --frozen-lockfile
+      - name: Generate Prisma Client
+        run: bunx prisma generate
       - name: Run Linter
         run: bun lint
       - name: Run Build
